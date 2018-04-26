@@ -2,6 +2,13 @@
 
 return [
 
+    'nav' => [
+        '/verbs/search' => 'Search',
+        '/saved' => 'Saved',
+        '/about' => 'About',
+        '/contact' => 'Contact',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
