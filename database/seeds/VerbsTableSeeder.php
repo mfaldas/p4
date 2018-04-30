@@ -71,6 +71,5 @@ class VerbsTableSeeder extends Seeder
             $verb->save();
             $count--;
         }
-        //
     }
 }

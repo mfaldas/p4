@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Log;
 use App\Verb;
-use App\Vsave;
+use App\Favorite;
 
 class VerbController extends Controller
 {
@@ -66,7 +66,7 @@ class VerbController extends Controller
 
     public function saved()
     {
-        $list = Vsave::all();
+        $list = Favorite::all();
 
         return view('verbs.saved')->with([
             'list' => $list
@@ -77,19 +77,19 @@ class VerbController extends Controller
     {
         #Convert data from String to Int
         $toAddId = (int)($request->toAdd);
-        $toAddVObject = Verb::find($toAddId);
+        $toAdd = Verb::find($toAddId);
 
-        $vSave = new Vsave();
-        $vSave->englishTranslation = $toAddVObject->englishTranslation;
-        $vSave->filipinoRootTranslation = $toAddVObject->filipinoRootTranslation;
-        $vSave->filipinoPastTenseTranslation = $toAddVObject->filipinoPastTenseTranslation;
-        $vSave->filipinoPresentTenseTranslation = $toAddVObject->filipinoPresentTenseTranslation;
-        $vSave->filipinoFutureTenseTranslation = $toAddVObject->filipinoFutureTenseTranslation;
-        $vSave->japaneseRootTranslation = $toAddVObject->japaneseRootTranslation;
-        $vSave->removeFromList = false;
-        $vSave->save();
+        $favorite = new Favorite();
+        $favorite->faveWord = $toAdd->englishTranslation;
+        $favorite->save();
+        $faveToAdd = Favorite::find($favorite->id);
 
-        $list = Vsave::all();
+
+        $toAdd->favorites()->save($faveToAdd);
+
+        $list = Favorite::all();
+
+
 
         return redirect('/saved')->with([
             'list' => $list

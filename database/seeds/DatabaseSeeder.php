@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(FavoritesTableSeeder::class);
         $this->call(VerbsTableSeeder::class);
+        $this->call(FavoriteVerbTable::class);
     }
 }
