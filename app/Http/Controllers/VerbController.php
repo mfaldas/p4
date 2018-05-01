@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Log;
 use App\Verb;
-use App\Favorite;
+use App\User;
 
 class VerbController extends Controller
 {
@@ -79,17 +79,11 @@ class VerbController extends Controller
         $toAddId = (int)($request->toAdd);
         $toAdd = Verb::find($toAddId);
 
-        $favorite = new Favorite();
-        $favorite->faveWord = $toAdd->englishTranslation;
-        $favorite->save();
-        $faveToAdd = Favorite::find($favorite->id);
+        $user = User::find(1);
 
+        $user->verbs()->save($toAdd);
 
-        $toAdd->favorites()->save($faveToAdd);
-
-        $list = Favorite::all();
-
-
+        dd($user->verbs());
 
         return redirect('/saved')->with([
             'list' => $list

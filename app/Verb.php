@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Verb extends Model
 {
-    public function favorites()
+    public function users()
     {
-        return $this->belongsToMany('App\Favorite')->withTimestamps();
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
 }

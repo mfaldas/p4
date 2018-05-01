@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFavoriteVerbTable extends Migration
+class CreateUserVerbTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateFavoriteVerbTable extends Migration
      */
     public function up()
     {
-        Schema::create('favorite_verb', function (Blueprint $table) {
+        Schema::create('user_verb', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
-            $table->integer('favorite_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('verb_id')->unsigned();
 
-            $table->foreign('verb_id')->references('id')->on('favorites');
-            $table->foreign('favorite_id')->references('id')->on('verbs');
+            $table->foreign('verb_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('verbs');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateFavoriteVerbTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorite_verb');
+        Schema::dropIfExists('user_verb');
     }
 }

@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Favorite;
-use App\Verb;
 
-class FavoriteVerbTable extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
