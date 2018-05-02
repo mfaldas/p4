@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Log;
 use App\Verb;
 use App\User;
+use DB;
+use Auth;
 
 class VerbController extends Controller
 {
     public function update(Request $request)
     {
-
         $this->validate($request, [
             'filipinoRootTranslation' => 'required',
             'filipinoPastTenseTranslation' => 'required',
@@ -30,34 +31,51 @@ class VerbController extends Controller
 
         $toUpdateVObject->save();
 
-        return redirect('/verbs/' . $request->toUpdate);
+        return redirect('/verbs/' . $request->toUpdate)->with([
+            'alert' => 'Edits Saved.'
+        ])
+        ;
     }
 
     public function edit(Request $request)
     {
+        $user = Auth::user();
         $toEditId = (int)($request->toEdit);
         $toEditVObject = Verb::find($toEditId);
 
-        return view('verbs.edit')->with([
-            'toUpdate' => $toEditVObject->id,
-            'englishTranslation' => $toEditVObject->englishTranslation,
-            'filipinoRootTranslation' => $toEditVObject->filipinoRootTranslation,
-            'filipinoPastTenseTranslation' => $toEditVObject->filipinoPastTenseTranslation,
-            'filipinoPresentTenseTranslation' => $toEditVObject->filipinoPresentTenseTranslation,
-            'filipinoFutureTenseTranslation' => $toEditVObject->filipinoFutureTenseTranslation,
-            'japaneseRootTranslation' => $toEditVObject->japaneseRootTranslation,
-        ]);
+        if ($user->editAccess) {
+            return view('verbs.edit')->with([
+                'toUpdate' => $toEditVObject->id,
+                'englishTranslation' => $toEditVObject->englishTranslation,
+                'filipinoRootTranslation' => $toEditVObject->filipinoRootTranslation,
+                'filipinoPastTenseTranslation' => $toEditVObject->filipinoPastTenseTranslation,
+                'filipinoPresentTenseTranslation' => $toEditVObject->filipinoPresentTenseTranslation,
+                'filipinoFutureTenseTranslation' => $toEditVObject->filipinoFutureTenseTranslation,
+                'japaneseRootTranslation' => $toEditVObject->japaneseRootTranslation,
+            ]);
+        } else {
+            return redirect('verbs/' . $toEditId)->with([
+                'verb' => $toEditVObject,
+                'alert' => 'You do not have authorization to edit.'
+            ]);
+        }
     }
 
     public function delete(Request $request)
     {
         $toDelete = $request->checked;
+        $user = Auth::user();
 
-        foreach ($toDelete as $key) {
-            Vsave::destroy($key);
+        if (!($toDelete == null)) {
+            foreach ($toDelete as $key) {
+                DB::table('user_verb')
+                    ->where('verb_id', '=', $key)
+                    ->where('user_id', '=', $user->id)
+                    ->delete();
+            }
+
+            $list = $user->verbs;
         }
-
-        $list = Vsave::all();
 
         return redirect('/saved')->with([
             'list' => $list
@@ -66,7 +84,8 @@ class VerbController extends Controller
 
     public function saved()
     {
-        $list = Favorite::all();
+        $user = Auth::user();
+        $list = $user->verbs;
 
         return view('verbs.saved')->with([
             'list' => $list
@@ -78,12 +97,18 @@ class VerbController extends Controller
         #Convert data from String to Int
         $toAddId = (int)($request->toAdd);
         $toAdd = Verb::find($toAddId);
+        $user = Auth::user();
 
-        $user = User::find(1);
+        $hasVerb = DB::table('user_verb')
+            ->where('verb_id', '=', $toAddId)
+            ->where('user_id', '=', $user->id)
+            ->exists();
 
-        $user->verbs()->save($toAdd);
+        if (!$hasVerb) {
+            $user->verbs()->save($toAdd);
+        }
 
-        dd($user->verbs());
+        $list = $user->verbs;
 
         return redirect('/saved')->with([
             'list' => $list

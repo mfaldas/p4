@@ -18,6 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+
+            #Give select users access to edit and update a verb entry
+            $table->boolean('editAccess');
+
             $table->rememberToken();
             $table->timestamps();
         });

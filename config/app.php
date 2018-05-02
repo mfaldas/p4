@@ -2,7 +2,16 @@
 
 return [
 
+    #Guest
     'nav' => [
+        '/register' => 'Register',
+        '/login' => 'Login',
+        '/about' => 'About',
+        '/contact' => 'Contact',
+    ],
+
+    # Logged-in user navigation links
+    'nav1' => [
         '/verbs/search' => 'Search',
         '/saved' => 'Saved',
         '/about' => 'About',
@@ -166,6 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
     ],
 

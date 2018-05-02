@@ -20,8 +20,8 @@ class CreateUserVerbTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('verb_id')->unsigned();
 
-            $table->foreign('verb_id')->references('id')->on('users');
-            $table->foreign('user_id')->references('id')->on('verbs');
+            $table->foreign('verb_id')->references('id')->on('verbs');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

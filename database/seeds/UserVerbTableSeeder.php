@@ -12,12 +12,6 @@ class UserVerbTableSeeder extends Seeder
      */
     public function run()
     {
-        $info = ['Sexy Beast', 'sexybeast@gmail.com', 'sexybeast' ];
 
-        $user = new User;
-        $user->name = $info[0];
-        $user->email = $info[1];
-        $user->password = $info[2];
-        $user->save();
     }
 }

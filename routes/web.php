@@ -11,16 +11,23 @@
 |
 */
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/verbs/search', 'VerbController@search');
+    Route::get('/verbs/{id}', 'VerbController@show');
+    Route::get('/edit', 'VerbController@edit');
+
+    Route::get('/saved', 'VerbController@saved');
+    Route::post('/add', 'VerbController@add');
+    Route::get('/delete', 'VerbController@delete');
+
+    Route::post('/update', 'VerbController@update');
+
+});
+
 Route::get('/', 'PageController@welcome');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 
-Route::get('/verbs/search', 'VerbController@search');
-Route::get('/verbs/{id}', 'VerbController@show');
-Route::get('/edit', 'VerbController@edit');
+Auth::routes();
 
-Route::get('/saved', 'VerbController@saved');
-Route::post('/add', 'VerbController@add');
-Route::get('/delete', 'VerbController@delete');
 
-Route::post('/update', 'VerbController@update');

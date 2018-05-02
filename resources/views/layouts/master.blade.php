@@ -12,6 +12,10 @@
 </head>
 <body>
 
+@if(session('alert'))
+    <div class='flashAlert'>{{ session('alert') }}</div>
+@endif
+
 
 
 <header>
