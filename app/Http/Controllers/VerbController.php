@@ -73,9 +73,9 @@ class VerbController extends Controller
                     ->where('user_id', '=', $user->id)
                     ->delete();
             }
-
-            $list = $user->verbs;
         }
+
+        $list = $user->verbs;
 
         return redirect('/saved')->with([
             'list' => $list
