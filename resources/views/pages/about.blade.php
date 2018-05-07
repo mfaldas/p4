@@ -21,7 +21,7 @@
 
     <p>
 
-        La conjugación de los verbos filipinos es difícil. Por eso, tenemos este diccionario para usted. Buscan verbos, agregalos a su lista y practica!
+        La conjugación de los verbos filipinos es difícil. Por eso, tenemos este diccionario para usted. Busca verbos, agregalos a su lista y practica!
 
     </P>
 
