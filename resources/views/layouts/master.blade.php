@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
     <title>@yield('title', 'Filipino Verb Dictionary')</title>
     <meta charset="utf-8">
