@@ -12,10 +12,11 @@ return [
 
     # Logged-in user navigation links
     'nav1' => [
-        '/verbs/search' => 'Search',
-        '/saved' => 'Saved',
+        '' => 'User',
         '/about' => 'About',
         '/contact' => 'Contact',
+        '/verbs/search' => 'Search',
+        '/saved' => 'Saved',
     ],
 
     /*

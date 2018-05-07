@@ -1,10 +1,9 @@
 /* box sizing: http://www.paulirish.com/2012/box-sizing-border-box-ftw */
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
 }
 
+/*Professor Code*/
 html {
     font-size: 62.5%; /* http://snook.ca/archives/html_and_css/font-size-with-rem */
     color: #111;
@@ -24,24 +23,21 @@ body {
     margin-bottom: 60px;
 }
 
+/*Professor Code*/
 section#main {
-    max-width: 600px;
+    min-width: 1000px;
     width: 100%;
     margin: auto;
     padding-bottom: 20px;
     text-align: center;
 }
 
-header {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/*Professor Code*/
 #logo {
-    /* Actual width is 632; displaying at half-size for retina screens */
     width: 316px;
 }
 
+/*Professor Code*/
 footer {
     text-align: center;
     background-color: #eee;
@@ -55,59 +51,95 @@ footer {
 }
 
 /*----------------------------------------------------
-Nav bar
+Login Page and Register Page
 -----------------------------------------------------*/
-nav {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 5px;
-    margin-top: 10px;
+
+.guestDiv {
+
+    width: 600px;
+    margin: 0 auto;
+    border: 10px outset rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 40px;
+
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.guestSubheading {
+
+    padding-bottom: 10px;
 }
 
+/*----------------------------------------------------
+Edit Page
+-----------------------------------------------------*/
+
+.editDiv {
+
+    width: 750px;
+    height: 570px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 10px outset rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 40px;
+    margin: auto;
+}
+
+/*----------------------------------------------------
+Nav Bar
+-----------------------------------------------------*/
+
+.navbar {
+    min-width: 1000px;
+}
+
+.navbar-brand {
+    display: block;
+    margin-left: 12.5%;
+}
+
+.navbar-toggle {
+    z-index: 3;
+}
+
+.navbar-collapse.collapse {
+    display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+    float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+}
+
+.navbar-right {
+    float: right!important;
+}
+
+/*Professor Code*/
 nav ul li {
     display: inline-block;
+    margin-top: 5px;
     padding: 10px;
 }
 
+/*Professor Code*/
 nav ul li a:link {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-nav ul li a:hover {
-    color: #18bc9c; /* flatly teel */
+#logout {
+    padding-top: 13px;
 }
 
-/*----------------------------------------------------
-Typography
------------------------------------------------------*/
-a.active:link, a.active:visited, a.active:active, a.active:hover {
-    color: #18bc9c;
-}
-
-h1 {
-    text-align: center;
-    font-size: 3.0rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 2.0rem;
-}
 
 /*----------------------------------------------------
 Forms
 -----------------------------------------------------*/
+
 label, legend {
     display: block;
     margin-top: 20px;
@@ -167,39 +199,71 @@ input[type='checkbox'] + label {
 }
 
 /*----------------------------------------------------
-Misc
+Alerts
 -----------------------------------------------------*/
-/* Clear Fix: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.cf:before,
-.cf:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */
+
+#noAuth {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }
 
-.cf:after {
-    clear: both;
+#editsSaved {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }
 
-.cf {
-    *zoom: 1;
+/*----------------------------------------------------
+Search Bar
+-----------------------------------------------------*/
+
+.searchBarSection {
+
+    height: 100px;
+
 }
+
+#searchBar {
+
+    width: 550px;
+
+}
+
+#searchButton {
+
+    margin-top: 33.5px;
+
+}
+
+#separator {
+
+    display: block;
+    height: 1px;
+    border: 0;
+    width: 850px;
+    border-top: 1px solid #ccc;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+/*----------------------------------------------------
+Verbs Show Page
+-----------------------------------------------------*/
 
 #verbDiv {
 
     width: 750px;
-    height: 300px;
+    height: 350px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 10px outset rgba(0, 0, 0, 0.05);
     border-radius: 25px;
     padding: 40px;
-    position: absolute;
     margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 #englishSubHeading {
@@ -207,3 +271,64 @@ Misc
     font-style: italic;
 
 }
+
+/*----------------------------------------------------
+Tables CSS
+-----------------------------------------------------*/
+
+.verbTable {
+    table-layout: fixed;
+    border-spacing: 15px;
+    margin: auto;
+}
+
+/* Verb Table */
+#masterVerbTable {
+    width: 800px;
+}
+
+/* User's Saved Verb Table */
+#savedVerbTable {
+    width: 950px;
+}
+
+.Heading {
+    background-color: #2c6faf;
+    color: #ffffff;
+    text-align: center;
+}
+
+.Th {
+    text-align: left;
+}
+
+#eHeading, #eTh {
+    padding: 15px;
+}
+
+#frtHeading, #frtTh {
+    width: 120px;
+    padding: 10px;
+}
+
+#fprtHeading, #fprtTh {
+    padding: 10px;
+}
+
+#fftHeading, #fftTh {
+    padding: 10px;
+}
+
+#jrtHeading, #jrtTh {
+    padding: 10px;
+}
+
+#removeHeading, #removeCheck {
+    padding: 10px;
+    text-align: center;
+}
+
+#searchTr:nth-child(even) {
+    background-color: #f2f2f2
+}
+

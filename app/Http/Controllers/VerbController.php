@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Log;
 use App\Verb;
 use App\User;
-use DB;
 use Auth;
 
 class VerbController extends Controller
@@ -32,9 +31,8 @@ class VerbController extends Controller
         $toUpdateVObject->save();
 
         return redirect('/verbs/' . $request->toUpdate)->with([
-            'alert' => 'Edits Saved.'
-        ])
-        ;
+            'alertEditsSaved' => 'Edits Saved.'
+        ]);
     }
 
     public function edit(Request $request)
@@ -56,7 +54,7 @@ class VerbController extends Controller
         } else {
             return redirect('verbs/' . $toEditId)->with([
                 'verb' => $toEditVObject,
-                'alert' => 'You do not have authorization to edit.'
+                'alertNoAuth' => 'You do not have authorization to edit.'
             ]);
         }
     }
@@ -68,10 +66,7 @@ class VerbController extends Controller
 
         if (!($toDelete == null)) {
             foreach ($toDelete as $key) {
-                DB::table('user_verb')
-                    ->where('verb_id', '=', $key)
-                    ->where('user_id', '=', $user->id)
-                    ->delete();
+                $user->verbs()->detach($key);
             }
         }
 
@@ -99,10 +94,11 @@ class VerbController extends Controller
         $toAdd = Verb::find($toAddId);
         $user = Auth::user();
 
-        $hasVerb = DB::table('user_verb')
-            ->where('verb_id', '=', $toAddId)
-            ->where('user_id', '=', $user->id)
-            ->exists();
+        # The user's list
+        $list = $user->verbs;
+
+        # Check if verb exits
+        $hasVerb = $list->contains($toAdd);
 
         if (!$hasVerb) {
             $user->verbs()->save($toAdd);

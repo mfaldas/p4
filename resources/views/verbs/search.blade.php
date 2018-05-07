@@ -7,43 +7,41 @@
 @section('content')
     <h1>Search</h1>
 
-    <form method='GET' action='/verbs/search'>
+    <div class='row'>
 
-        <fieldset>
-            <label for='searchTerm'>Find a verb:</label>
-            <input type='text' name='searchTerm' id='searchTerm' value='{{ $searchTerm }}'>
+    @include('modules.searchBar')
 
-        </fieldset>
+    </div>
 
-        <input type='submit' value='Search' class='btn btn-primary btn-small'>
-
-    </form>
+    <div class='row'>
 
     @if($searchTerm)
+        <hr id='separator'>
         <h2>Results for query: <em>{{ $searchTerm }}</em></h2>
 
         @if(count($searchResults) == 0)
             No matches found.
         @else
 
-            <table id="t01">
+            <table class='verbTable' id="masterVerbTable">
                 <tr>
-                    <th>English</th>
-                    <th>Filipino Root</th>
-                    <th>Filipino Past Tense</th>
-                    <th>Filipino Present Tense</th>
-                    <th>Filipino Future Tense</th>
-                    <th>Japanese Root</th>
+                    <th class='Heading' id='eHeading'>English</th>
+                    <th class='Heading' id='frtHeading'>Filipino Root</th>
+                    <th class='Heading' id='fprtHeading'>Past Tense</th>
+                    <th class='Heading' id='fpatheading'>Present Tense</th>
+                    <th class='Heading' id='fftHeading'>Future Tense</th>
+                    <th class='Heading' id='jrtHeading'>Japanese Root</th>
                 </tr>
 
                 @foreach($searchResults as $verb)
-                    <tr>
-                        <th> <a href='/verbs/{{ $verb->id }}'>{{ $verb->englishTranslation }}</a> </th>
-                        <th> {{ $verb->filipinoRootTranslation}} </th>
-                        <th> {{ $verb->filipinoPastTenseTranslation }}</th>
-                        <th> {{ $verb->filipinoPresentTenseTranslation }} </th>
-                        <th> {{ $verb->filipinoFutureTenseTranslation }} </th>
-                        <th> {{ $verb->japaneseRootTranslation }} </th>
+                    <tr id='searchTr'>
+                        <th class='Th' id='eTh'><a href='/verbs/{{ $verb->id }}'>{{ $verb->englishTranslation }}</a>
+                        </th>
+                        <th class='Th' id='frtTh'> {{ $verb->filipinoRootTranslation}} </th>
+                        <th class='Th' id='fprtTh'> {{ $verb->filipinoPastTenseTranslation }}</th>
+                        <th class='Th' id='fpatTh'> {{ $verb->filipinoPresentTenseTranslation }} </th>
+                        <th class='Th' id='fftTh'> {{ $verb->filipinoFutureTenseTranslation }} </th>
+                        <th class='Th' id='jrtTh'> {{ $verb->japaneseRootTranslation }} </th>
                     </tr>
 
                 @endforeach
@@ -51,4 +49,7 @@
             </table>
         @endif
     @endif
+
+    </div>
+
 @endsection

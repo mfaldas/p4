@@ -2,30 +2,32 @@
 
 @section('content')
 
-    <h1>Login</h1>
+    <h1>LOGIN</h1>
 
-    Don't have an account? <a href='/register'>Register here...</a>
+    <h5 class='guestSubheading'>Don't have an account? <a href='/register'>Register here...</a></h5>
 
-    <form method='POST' action='{{ route('login') }}'>
+    <div class='guestDiv'>
 
-        {{ csrf_field() }}
+        <form method='POST' action='{{ route('login') }}'>
 
-        <label for='email'>E-Mail Address</label>
-        <input id='email' type='email' name='email' value='{{ old('email') }}' required autofocus>
-        @include('modules.error-field', ['field' => 'email'])
+            {{ csrf_field() }}
 
-        <label for='password'>Password</label>
-        <input id='password' type='password' name='password' required>
-        @include('modules.error-field', ['field' => 'password'])
+            <label for='email'>E-Mail Address</label>
+            <input id='email' type='email' name='email' value='{{ old('email') }}' required autofocus>
+            @include('modules.error-field', ['field' => 'email'])
 
-        <label>
-            <input type='checkbox' name='remember' {{ old('remember') ? 'checked' : '' }}> Remember Me
-        </label>
+            <label for='password'>Password</label>
+            <input id='password' type='password' name='password' required>
+            @include('modules.error-field', ['field' => 'password'])
 
-        <button type='submit' class='btn btn-primary'>Login</button>
+            <label>
+                <input type='checkbox' name='remember' {{ old('remember') ? 'checked' : '' }}> Remember Me
+            </label>
 
-        <a class='btn btn-link' href='{{ route('password.request') }}'>Forgot Your Password?</a>
+            <button type='submit' class='btn btn-primary'>Login</button>
+        </form>
 
-    </form>
+    </div>
+
 
 @endsection

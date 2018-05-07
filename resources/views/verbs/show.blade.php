@@ -10,48 +10,85 @@
 
 @section('content')
 
-    <form method='GET' action='/verbs/search'>
+    <div class='row'>
 
-        <fieldset>
-            <label for='searchTerm'>Find a verb:</label>
-            <input type='text' name='searchTerm' id='searchTerm' value='{{ $verb->englishTranslation  }}'>
-
-        </fieldset>
-
-        <input type='submit' value='Search' class='btn btn-primary btn-small'>
-
-    </form>
-
-
-    <div class='parent' id='verbDiv'>
-
-        <h1>{{ $verb->filipinoRootTranslation }}</h1>
-
-        <h5 id='englishSubHeading'>
-            {{ $verb->englishTranslation }}
-
-        </h5>
-
-        <h6>Root Translation: {{$verb->filipinoRootTranslation}}</h6>
-        <h6>Past Tense Translation: {{$verb->filipinoPastTenseTranslation}}</h6>
-        <h6>Present Tense Translation: {{$verb->filipinoPresentTenseTranslation}}</h6>
-        <h6>Future Tense Translation: {{$verb->filipinoutureTenseTranslation}}</h6>
-        <h6>JapaneseTranslation: {{$verb->japaneseRootTranslation}}</h6>
-
-        <form method='POST' action='/add'>
-
-            {{ csrf_field() }}
-            <input type='hidden' name='toAdd' value='{{$verb->id}}'>
-
-            <input type='submit' value='Add' class='btn btn-primary btn-small'>
-        </form>
-
-        <form method='GET' action='/edit'>
-            <input type='hidden' name='toEdit' value='{{$verb->id}}'>
-            <input type='submit' value='Edit' class='btn btn-primary btn-small'>
-        </form>
+        @include('modules.searchBar')
 
     </div>
+
+    <div class='row'>
+
+        <div class='parent' id='verbDiv'>
+
+
+            <div class='col-sm-4'>
+
+                <div class='row'>
+
+                    <h1>{{ $verb->filipinoRootTranslation }}</h1>
+
+                    <h5 id='englishSubHeading'>
+                        {{ $verb->englishTranslation }}
+                    </h5>
+                </div>
+
+                <div class='row'>
+
+                    <div class='col-sm-6'>
+
+                        <span class="pull-right">
+                            <form method='POST' action='/add'>
+
+                                {{ csrf_field() }}
+                                <input type='hidden' name='toAdd' value='{{$verb->id}}'>
+                                <input type='submit' value='Add' class='btn btn-primary btn-small'>
+                            </form>
+                        </span>
+                    </div>
+
+                    <div class='col-sm-6' id='abColumn'>
+                        <span class="pull-left">
+                            <form method='GET' action='/edit'>
+                                <input type='hidden' name='toEdit' value='{{$verb->id}}'>
+                                <input type='submit' value='Edit' class='btn btn-primary btn-small'>
+                            </form>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class='col-sm-8'>
+                <table class="table table-bordered">
+                    <tr>
+                        <th><h6>Root Translation: </h6></th>
+                        <th><h6>{{$verb->filipinoRootTranslation}}</h6></th>
+                    </tr>
+                    <tr>
+                        <th><h6>Present Tense Translation: </h6></th>
+                        <th><h6>{{$verb->filipinoPresentTenseTranslation}}</h6>
+                    </tr>
+                    <tr>
+                        <th><h6>Past Tense Translation: </h6></th>
+                        <th><h6>{{$verb->filipinoPastTenseTranslation}}</h6>
+                    </tr>
+                    <tr>
+                        <th><h6>Future Tense Translation: </h6></th>
+                        <th><h6>{{$verb->filipinoFutureTenseTranslation}}</h6>
+                    </tr>
+                    <tr>
+                        <th><h6>Japanese Root Translation: </h6></th>
+                        <th><h6>{{$verb->japaneseRootTranslation}}</h6></th>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 
 
