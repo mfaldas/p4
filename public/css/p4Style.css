@@ -1,19 +1,29 @@
-/* box sizing: http://www.paulirish.com/2012/box-sizing-border-box-ftw */
-* {
+/**
+ *CSS Style for Project 4
+ *Some CSS code integrated from Foobooks
+ *  -HTML/Main Section Code
+ *  -Sticky Footer Code
+ *  -Forms and associated alerts code
+ *
+ *Modifications were made to code so projects
+ *looks different from Foobooks.
+ *
+ *Created by: Marc-Eli Faldas
+ *Last Modified: 5/8/2018
+ */
 
-}
-
-/*Professor Code*/
+/*Foobooks Code*/
 html {
     font-size: 62.5%; /* http://snook.ca/archives/html_and_css/font-size-with-rem */
     color: #111;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Verdana, Geneva, sans-serif; /*<--Code Change*/
 
     /* sticky footer */
     position: relative;
     min-height: 100%;
 }
 
+/*Foobooks Code*/
 body {
     /* Default font-size */
     font-size: 16px;
@@ -23,21 +33,20 @@ body {
     margin-bottom: 60px;
 }
 
-/*Professor Code*/
+/*Foobooks Code*/
 section#main {
-    min-width: 1000px;
+    min-width: 1000px; /*<--Code Change*/
     width: 100%;
     margin: auto;
     padding-bottom: 20px;
     text-align: center;
 }
 
-/*Professor Code*/
 #logo {
-    width: 316px;
+    width: 320px;
 }
 
-/*Professor Code*/
+/*Foobooks Code*/
 footer {
     text-align: center;
     background-color: #eee;
@@ -101,6 +110,8 @@ Nav Bar
     z-index: 3;
 }
 
+
+/*To Deactivate the Collapse of Navbar*/
 .navbar-collapse.collapse {
     display: block!important;
 }
@@ -117,14 +128,14 @@ Nav Bar
     float: right!important;
 }
 
-/*Professor Code*/
+/*Foobooks Code*/
 nav ul li {
     display: inline-block;
     margin-top: 5px;
     padding: 10px;
 }
 
-/*Professor Code*/
+/*Foobooks Code*/
 nav ul li a:link {
     text-decoration: none;
     font-weight: bold;
@@ -137,7 +148,7 @@ nav ul li a:link {
 
 
 /*----------------------------------------------------
-Forms
+Forms - Code From Foobooks
 -----------------------------------------------------*/
 
 label, legend {
@@ -157,7 +168,7 @@ input[type=text], input[type=email], input[type=password], textarea, select {
     width: 100%;
     font-size: 1.5rem;
     padding: 3px;
-    font-family: Consolas, Courier, monospace;
+    font-family: "Courier New", Courier, monospace; /*<--Code Change*/
 }
 
 input[type='checkbox'], input[type='radio'] {
@@ -330,5 +341,36 @@ Tables CSS
 
 #searchTr:nth-child(even) {
     background-color: #f2f2f2
+}
+
+.aboutTable {
+    width: 600px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 15px;
+
+}
+
+.languageHeading {
+    text-align: center;
+    color: #2c6faf;
+}
+
+.description {
+    text-align: center;
+
+}
+
+#filipinoHeading, #filipinoDescription {
+    padding-left: 10%;
+}
+
+#spanishHeading, #spanishDescription {
+    padding-left: 10%;
+
+}
+
+#englishDescription, #filipinoDescription {
+    padding-bottom: 5%;
 }
 

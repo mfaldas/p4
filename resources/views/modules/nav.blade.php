@@ -1,5 +1,9 @@
-<nav class="navbar navbar-default" role="navigation">
+{{-- NavBar Module--}}
+{{-- Integrated some Code from Foobooks  --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
 
+<nav class="navbar navbar-default">
 
     <div class='col-sm-4'>
 
@@ -22,7 +26,7 @@
     </div>
 
     <div class='col-sm-4'>
-        <a class='navbar-brand' href='/'><img id='logo' src='/images/p4Logo.png'></a>
+        <a class='navbar-brand' href='/' alt='Filipino Verb Dictionary'><img id='logo' src='/images/p4Logo.png'></a>
     </div>
 
     <div class='col-sm-4'>
@@ -47,6 +51,5 @@
             @endif
         </ul>
 
-    </div>
     </div>
 </nav>

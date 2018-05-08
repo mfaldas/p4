@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * User.php
+ * Verb Eloquent Model
+ * Last Modified: 5/8/2018
+ * Has a Many-to-Many relationship with Users.
+ */
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;

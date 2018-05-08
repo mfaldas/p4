@@ -1,3 +1,8 @@
+{{-- Edit a Verb Page --}}
+{{-- Integrated some code, specifically Form code from Lecture/Foobooks--}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 @extends('layouts.master')
 
 @section('title')
@@ -9,7 +14,7 @@
     <div class='editDiv'>
 
         <form method='POST' action='/update'>
-
+            {{ method_field('put') }}
             {{csrf_field()}}
 
             <h1>Edit for {{$englishTranslation}}</h1>

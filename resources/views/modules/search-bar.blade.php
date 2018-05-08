@@ -1,3 +1,8 @@
+{{-- SearchBar Module--}}
+{{-- Integrated some Code from Foobooks  --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 <div class='searchBarSection'>
 
     <form method='GET' action='/verbs/search'>

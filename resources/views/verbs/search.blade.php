@@ -1,3 +1,8 @@
+{{-- Search for a Page--}}
+{{-- Search for Verb and Present Results --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 @extends('layouts.master')
 
 @section('title')
@@ -9,7 +14,7 @@
 
     <div class='row'>
 
-    @include('modules.searchBar')
+    @include('modules.search-bar')
 
     </div>
 
@@ -17,10 +22,10 @@
 
     @if($searchTerm)
         <hr id='separator'>
-        <h2>Results for query: <em>{{ $searchTerm }}</em></h2>
+        <h2>Results For: <em>{{ $searchTerm }}</em></h2>
 
         @if(count($searchResults) == 0)
-            No matches found.
+            No Matches Found.
         @else
 
             <table class='verbTable' id="masterVerbTable">

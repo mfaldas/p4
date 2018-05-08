@@ -1,3 +1,8 @@
+{{-- Saved Verbs Pages --}}
+{{-- Show verbs associated with user  --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 @extends('layouts.master')
 
 @section('title')
@@ -11,7 +16,10 @@
 
     @else
 
-        <form method='GET' action='/delete'>
+        <form method='POST' action='/delete'>
+            {{ method_field('delete') }}
+            {{ csrf_field() }}
+
 
             <h1>Your List of Verbs</h1>
 
@@ -29,12 +37,13 @@
                 @foreach($list as $verb)
                     <tr>
                     <tr id='searchTr'>
-                        <th class = 'Th' id='eTh'> <a href='/verbs/{{ $verb->id }}'>{{ $verb->englishTranslation }}</a> </th>
-                        <th class = 'Th' id='frtTh'> {{ $verb->filipinoRootTranslation}} </th>
-                        <th class = 'Th' id='fprtTh'> {{ $verb->filipinoPastTenseTranslation }}</th>
-                        <th class = 'Th' id='fpatTh'> {{ $verb->filipinoPresentTenseTranslation }} </th>
-                        <th class = 'Th' id='fftTh'> {{ $verb->filipinoFutureTenseTranslation }} </th>
-                        <th class = 'Th' id='jrtTh'> {{ $verb->japaneseRootTranslation }} </th>
+                        <th class='Th' id='eTh'><a href='/verbs/{{ $verb->id }}'>{{ $verb->englishTranslation }}</a>
+                        </th>
+                        <th class='Th' id='frtTh'> {{ $verb->filipinoRootTranslation}} </th>
+                        <th class='Th' id='fprtTh'> {{ $verb->filipinoPastTenseTranslation }}</th>
+                        <th class='Th' id='fpatTh'> {{ $verb->filipinoPresentTenseTranslation }} </th>
+                        <th class='Th' id='fftTh'> {{ $verb->filipinoFutureTenseTranslation }} </th>
+                        <th class='Th' id='jrtTh'> {{ $verb->japaneseRootTranslation }} </th>
                         <th id='removeCheck'><input type='checkbox' value='{{$verb->id}}' name='checked[]'></th>
                     </tr>
 

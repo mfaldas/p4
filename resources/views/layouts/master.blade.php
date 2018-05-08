@@ -1,3 +1,8 @@
+{{-- Master Template --}}
+{{-- Integrated some Code from Lecture  --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 <!doctype html>
 <html lang='en'>
 <head>
@@ -24,6 +29,7 @@
     @yield('content')
 </section>
 
+{{-- Alerts if Edits Made or User has No Auth to Make Edits--}}
 @if(session('alertNoAuth'))
     <div class='alert alert-warning' id='noAuth'>{{ session('alertNoAuth') }}</div>
 @endif
@@ -35,8 +41,6 @@
 <footer>
     <a href='http://github.com/mfaldas/p4'><i class='fa fa-github'></i> View on Github</a>
 </footer>
-
-{{--<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>--}}
 
 @stack('body')
 

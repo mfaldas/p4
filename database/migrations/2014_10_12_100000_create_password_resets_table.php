@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Table of Passwords
+ * Created by: Marc-Eli Faldas
+ * Last Modified: 5/8/2018
+ */
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;

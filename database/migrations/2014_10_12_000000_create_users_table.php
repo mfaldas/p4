@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Table of Users
+ * Created by: Marc-Eli Faldas
+ * Last Modified: 5/8/2018
+ */
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
-            #Give select users access to edit and update a verb entry
+            //Give select users access to edit and update a verb entry
             $table->boolean('editAccess');
 
             $table->rememberToken();

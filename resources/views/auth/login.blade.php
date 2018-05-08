@@ -1,3 +1,8 @@
+{{-- Login Page --}}
+{{-- Integrated some Code from Lecture  --}}
+{{-- Created By: Marc-Eli Faldas --}}
+{{-- Last Modified: 5/8/2018  --}}
+
 @extends('layouts.master')
 
 @section('content')

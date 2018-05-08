@@ -1,15 +1,16 @@
 <?php
 
+/**
+ * web.php
+ * Routes file.
+ * Created by: Marc-Eli Faldas
+ * Last Modified: 5/8/2018
+ */
+
+
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+ * Functionality that only logged in members can look.
+ */
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/verbs/search', 'VerbController@search');
@@ -18,11 +19,15 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/saved', 'VerbController@saved');
     Route::post('/add', 'VerbController@add');
-    Route::get('/delete', 'VerbController@delete');
+    Route::delete('/delete', 'VerbController@delete');
 
-    Route::post('/update', 'VerbController@update');
+    Route::put('/update', 'VerbController@update');
 
 });
+
+/*
+ * Functionality that guests and members can see.
+ */
 
 Route::get('/', 'PageController@welcome');
 Route::get('/about', 'PageController@about');

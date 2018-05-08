@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * config.php
+ * Last Modified: 5/8/2018
+ */
+
 return [
 
-    #Guest
+    'supportEmail' => 'help@filipinoverbdictionary.dwa15marcelifaldas.win',
+
+    //Guest
     'nav' => [
         '/register' => 'Register',
         '/login' => 'Login',
@@ -10,7 +17,7 @@ return [
         '/contact' => 'Contact',
     ],
 
-    # Logged-in user navigation links
+    //Logged-in user navigation links
     'nav1' => [
         '' => 'User',
         '/about' => 'About',
@@ -18,6 +25,8 @@ return [
         '/verbs/search' => 'Search',
         '/saved' => 'Saved',
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------

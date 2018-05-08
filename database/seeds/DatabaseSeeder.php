@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * UserVerb Pivot Table Seeder
+ *
+ * Initially empty because user fills its.
+ *
+ * Created by: Marc-Eli Faldas
+ * Last Modified: 5/08/2018
+ */
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
