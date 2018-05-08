@@ -26,7 +26,7 @@
     </div>
 
     <div class='col-sm-4'>
-        <a class='navbar-brand' href='/' alt='Filipino Verb Dictionary'><img id='logo' src='/images/p4Logo.png'></a>
+        <div class='navbar-brand'><img id='logo' src='/images/p4Logo.png'></div>
     </div>
 
     <div class='col-sm-4'>
