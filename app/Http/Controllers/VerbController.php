@@ -107,7 +107,8 @@ class VerbController extends Controller
 
         //Redirects back to the saved page
         return redirect('/saved')->with([
-            'list' => $list
+            'list' => $list,
+            'alertDeletionsMade' => 'Verbs Deleted from List'
         ]);
     }
 

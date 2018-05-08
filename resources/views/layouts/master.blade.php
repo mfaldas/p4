@@ -3,7 +3,7 @@
 {{-- Created By: Marc-Eli Faldas --}}
 {{-- Last Modified: 5/8/2018  --}}
 
-<!doctype html>
+    <!doctype html>
 <html lang='en'>
 <head>
     <title>@yield('title', 'Filipino Verb Dictionary')</title>
@@ -36,6 +36,10 @@
 
 @if(session('alertEditsSaved'))
     <div class='alert alert-success' id='editsSaved'>{{ session('alertEditsSaved') }}</div>
+@endif
+
+@if(session('alertDeletionsMade'))
+    <div class='alert alert-success' id='deletionsMade'>{{ session('alertDeletionsMade') }}</div>
 @endif
 
 <footer>
