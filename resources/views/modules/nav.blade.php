@@ -26,7 +26,7 @@
     </div>
 
     <div class='col-sm-4'>
-        <div class='navbar-brand'><img id='logo' src='/images/p4Logo.png'></div>
+        <div class='navbar-brand'><img id='logo' alt='Filipino Dictionary Logo' src='/images/p4Logo.png'></div>
     </div>
 
     <div class='col-sm-4'>
