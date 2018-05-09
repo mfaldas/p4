@@ -173,6 +173,7 @@ class VerbController extends Controller
         //Search term to find
         $searchTerm = $request->input('searchTerm', null);
 
+        //Searches all columns
         if ($searchTerm) {
             $searchResults = Verb::where('englishTranslation', 'LIKE', '%' . $searchTerm . '%')
                 ->orWhere('filipinoRootTranslation', 'LIKE', '%' . $searchTerm . '%')

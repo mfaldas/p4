@@ -7,7 +7,6 @@
  * Last Modified: 5/8/2018
  */
 
-
 /*
  * Functionality that only logged in members can look.
  */
@@ -22,7 +21,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/delete', 'VerbController@delete');
 
     Route::put('/update', 'VerbController@update');
-
 });
 
 /*

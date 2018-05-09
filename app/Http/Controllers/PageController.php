@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    //Just Goes to About Page
     public function welcome()
     {
         return view('pages.about');
