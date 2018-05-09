@@ -150,9 +150,12 @@ class VerbController extends Controller
         }
 
         $list = $user->verbs;
+        $name = ucfirst($toAdd->englishTranslation);
 
         return redirect('/saved')->with([
-            'list' => $list
+            'list' => $list,
+            'alertVerbSaved' => $name . ' has been add to your list.'
+
         ]);
     }
 

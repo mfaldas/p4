@@ -32,7 +32,7 @@ __Read__
   + Observe results
   
 __Update__
-Only two User have authority to Edit: E-Mail: susanbuck@gmail.com (Password: PlayIsGood) and E-Mail: marcfaldas@gmail.com (Password: SleepIsGood)
+  + Only two User have authority to Edit: E-Mail: susanbuck@gmail.com (Password: PlayIsGood) and E-Mail: marcfaldas@gmail.com (Password: SleepIsGood)
   + Login with Credentials (E-Mail: susanbuck@gmail.com Password: PlayIsGood)
   + Visit <http://p4.dwa15marcelifaldas.win/verbs/search>
   + Enter Query
@@ -48,6 +48,7 @@ Only two User have authority to Edit: E-Mail: susanbuck@gmail.com (Password: Pla
 __Delete__
   + Login with Credentials (E-Mail: susanbuck@gmail.com Password: PlayIsGood)
   + Add Verbs to Saved List if No Verbs were added yet
+  + Visit <http://p4.dwa15marcelifaldas.win/saved>
   + Click Checkbox for Verbs you would like to remove from Pivot Table
   + Press Delete
   + Observe deletions with alert message  
@@ -170,4 +171,5 @@ Please note the following:
 * Navbar does retain some of its collapse features.
 * Forms Code based on Lecture/Foobooks Code
 * Only Users Susan Buck (E-Mail: susanbuck@gmail.com Password: PlayIsGood) and Marc Faldas (E-Mail: marcfaldas@gmail.com Password: SleepIsGood) can edit.
+* Not all verbs have a Japanese Counterpart as I only provided the one's that I know of.  No Japanese Translation provided will have 'N/A'.
 * 'Forgot Password' feauture was not implemented as this is just a demo.

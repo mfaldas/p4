@@ -42,6 +42,10 @@
     <div class='alert alert-success' id='deletionsMade'>{{ session('alertDeletionsMade') }}</div>
 @endif
 
+@if(session('alertVerbSaved'))
+    <div class='alert alert-success' id='verbSaved'>{{ session('alertDeletionsMade') }}</div>
+@endif
+
 <footer>
     <a href='http://github.com/mfaldas/p4'><i class='fa fa-github'></i> View on Github</a>
 </footer>
