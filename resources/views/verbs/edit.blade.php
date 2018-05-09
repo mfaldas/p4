@@ -6,7 +6,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Saved Verbs
+    Edit
 @endsection
 
 @section('content')

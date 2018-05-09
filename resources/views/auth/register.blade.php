@@ -6,7 +6,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>REGISTER</h1>
+    <h1>Register</h1>
 
     <h5 class='guestSubheading'>Already have an account? <a href='/login'>Login here...</a></h5>
 

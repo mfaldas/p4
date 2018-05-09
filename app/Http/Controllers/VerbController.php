@@ -154,7 +154,7 @@ class VerbController extends Controller
 
         return redirect('/saved')->with([
             'list' => $list,
-            'alertVerbSaved' => $name . ' has been add to your list.'
+            'alertVerbSaved' => $name . ' has been added to your list.'
 
         ]);
     }

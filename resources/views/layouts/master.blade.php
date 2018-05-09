@@ -43,7 +43,7 @@
 @endif
 
 @if(session('alertVerbSaved'))
-    <div class='alert alert-success' id='verbSaved'>{{ session('alertDeletionsMade') }}</div>
+    <div class='alert alert-success' id='verbSaved'>{{ session('alertVerbSaved') }}</div>
 @endif
 
 <footer>

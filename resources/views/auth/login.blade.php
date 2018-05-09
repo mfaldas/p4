@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <h1>LOGIN</h1>
+    <h1>Login</h1>
 
     <h5 class='guestSubheading'>Don't have an account? <a href='/register'>Register here...</a></h5>
 
