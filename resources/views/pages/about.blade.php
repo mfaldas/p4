@@ -28,7 +28,7 @@
                 The Conjugation of Filipino Verbs is a little bit hard. That is why we have this useful dictionary! Find verbs, add them to your list, and start practicing!
             </th>
             <th class='description' id='filipinoDescription'>
-                Ang conjugation na mga Pilipino pandiwa ay mahirap. Kaya nga mayroon diksyunaryo kami para kayo! Hanapin mo mga pandiwa, lagayin nyo sa listahan ninyo, atsaka praktisin nyo!
+                Ang conjugation na mga Pilipino pandiwa ay mahirap. Kaya nga mayroon diksyunaryo kami para sa inyo! Hanapin mo mga pandiwa, lagyan niyo sa listahan ninyo, atsaka praktisin niyo!
             </th>
         </tr>
 
